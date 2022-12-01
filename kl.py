@@ -69,12 +69,12 @@ class KernighanLin():
     
     def partition(self):
         # initial partition: first half is group A, second half is B
-        for i in range(len(self.graph.vertices)/2):
+        for i in range(len(self.graph.vertices)//2):
             self.graph.vertices[i].partition_label = "A"
-        for i in range(len(self.graph.vertices)/2, len(self.graph.vertices)):
+        for i in range(len(self.graph.vertices)//2, len(self.graph.vertices)):
             self.graph.vertices[i].partition_label = "B"
         
-        print "Initial partition cost: " + str(self.graph.get_partition_cost())
+        print("Initial partition cost: " + str(self.graph.get_partition_cost()))
         p = 0 # pass
         total_gain = 0
        
@@ -93,7 +93,7 @@ class KernighanLin():
             gains = [] # [ ([a, b], gain), ... ]
         
             # while there are unvisited vertices
-            for _ in range(len(self.graph.vertices)/2): 
+            for _ in range(len(self.graph.vertices)//2): 
             
                 # choose a pair that maximizes gain 
                 max_gain = -1 * float("inf") # -infinity
@@ -150,10 +150,10 @@ class KernighanLin():
                             
                 p += 1
                 total_gain += g_max
-                print "Pass: " + str(p) + "\t\t\tGain: " + str(g_max)
+                print("Pass: " + str(p) + "\t\t\tGain: " + str(g_max))
             else: break
             
-        print "Total passes: " + str(p) + "\t\tTotal gain: " + str(total_gain) + "\t\tFinal partition cost: " + str(self.graph.get_partition_cost()) 
+        print("Total passes: " + str(p) + "\t\tTotal gain: " + str(total_gain) + "\t\tFinal partition cost: " + str(self.graph.get_partition_cost()))
         
 def main():
     graph = load_data("data.txt")
