@@ -1,8 +1,9 @@
 # Implementation of Kernighan-Lin graph partitioning algorithm
 # Based on this paper: An Efficient Heuristic Procedure for Partitioning Graphs (https://ieeexplore.ieee.org/document/6771089)
-
+#KL algo
 class Vertex:
     # id, edges, partition_label
+    
     def __init__(self, id):
         self.id = id
         self.edges = []
