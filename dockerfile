@@ -4,5 +4,5 @@ COPY data.txt /kernighan-lin/
 COPY test.txt /kernighan-lin/
 ADD kl.py ./
 
-# RUN pip install pandas
+# RUN pip install pandas(ifneeded)
 CMD python kl.py 
